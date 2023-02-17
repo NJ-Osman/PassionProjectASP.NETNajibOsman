@@ -1,0 +1,12 @@
+﻿@model IEnumerable<PassionProjectASP.NETNajibOsman.Models.PlayerDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach(var player in Model)
+{
+    <h2><a href="/Player/Details/@player.PlayerID">@player.PlayerName</a></h2>
+    <div>@player.PlayerBio</div>
+    <div>community name: @player.CommunityName</div>
+}

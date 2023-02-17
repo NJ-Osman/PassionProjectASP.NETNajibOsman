@@ -1,0 +1,24 @@
+﻿@model PassionProjectASP.NETNajibOsman.Models.CommunityDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Community</h2>
+<form action="/Community/Update/@Model.CommunityID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Community ID *@
+        <input type="text" name="CommunityID" value="@Model.CommunityID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="CommunityName" value="@Model.CommunityName" />
+    </div>
+    <div>
+        <label>Bio:</label>
+        <input type="Text" name="CommunityBio" value="@Model.CommunityBio" />
+    </div>
+    <div>
+        <input type="submit" value="Update Community" />
+
+    </div>
+</form>
+

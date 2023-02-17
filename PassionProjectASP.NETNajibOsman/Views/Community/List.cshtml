@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PassionProjectASP.NETNajibOsman.Models.CommunityDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Community/New">New Community</a>
+@foreach (var Community in Model)
+{
+    <h2><a href="/Community/Details/@Community.CommunityID">@Community.CommunityName</a></h2>
+    <div>Endangered: @Community.CommunityBio</div>
+
+}

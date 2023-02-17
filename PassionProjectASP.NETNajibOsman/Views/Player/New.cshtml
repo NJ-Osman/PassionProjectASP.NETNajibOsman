@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Player</h2>
+<form action="/Player/Create" method="POST">
+    <div>
+        <label>Name:</label> <input type="text" name="PlayerName" />
+    </div>
+    <div>
+        <label>Bio:</label> <input type="text" name="PlayerBio" />
+    </div>
+    <div>
+        <label>Community ID:</label> <input type="number" name="CommunityID" />
+    </div>
+    <div>
+        <input type="submit" value="Add Player" />
+    </div>
+</form>
+

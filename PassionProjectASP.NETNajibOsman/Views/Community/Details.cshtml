@@ -1,0 +1,24 @@
+﻿@model PassionProjectASP.NETNajibOsman.Models.ViewModels.DetailsCommunity
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<a href="/Community/List">Go back to list</a>
+<br />
+<a href="/Community/Edit/@Model.SelectedCommunity.CommunityID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Community/DeleteConfirm/@Model.SelectedCommunity.CommunityID">Delete</a>
+<h2>@Model.SelectedCommunity.CommunityName</h2>
+<div>Bio: @Model.SelectedCommunity.CommunityBio</div>
+
+
+<div style="margin-top:100px;">
+    <h3>players related to this community</h3>
+    @foreach (var player in Model.RelatedPlayers)
+    {
+        <a href="/Player/Details/@player.PlayerID">@player.PlayerName</a>
+
+    }
+</div>

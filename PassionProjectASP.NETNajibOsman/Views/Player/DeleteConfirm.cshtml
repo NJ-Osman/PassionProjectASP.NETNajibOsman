@@ -1,0 +1,18 @@
+﻿@model PassionProjectASP.NETNajibOsman.Models.PlayerDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this player?</h2>
+<nav>
+    <ul>
+        <li><a href="/Player/List">Cancel</a></li>
+        <li><a href="/Player/Edit/@Model.PlayerID">Update</a></li>
+    </ul>
+</nav>
+<h3>@Model.PlayerName</h3>
+<div>@Model.PlayerBio</div>
+<div>Community Name: @Model.CommunityName</div>
+<form action="/Player/Delete/@Model.PlayerID" method="POST">
+    <input type="submit" value="Confirm Delete" />

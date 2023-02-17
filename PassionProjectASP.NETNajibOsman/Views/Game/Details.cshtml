@@ -1,0 +1,24 @@
+﻿@model PassionProjectASP.NETNajibOsman.Models.ViewModels.DetailsGame
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="/Game/List">Go back to list</a>
+<br />
+<a href="/Game/Edit/@Model.SelectedGame.GameID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/Game/DeleteConfirm/@Model.SelectedGame.GameID">Delete</a>
+<h2>@Model.SelectedGame.GameName </h2>
+<p>@Model.SelectedGame.GameDescription</p>
+
+
+
+<div>
+    <h3>Responsible for:</h3>
+    @foreach (var player in Model.PlayedGames)
+    {
+        <a href="/Animal/Details/@player.PlayerID">@player.PlayerID</a><br />
+
+    }
+</div>
+

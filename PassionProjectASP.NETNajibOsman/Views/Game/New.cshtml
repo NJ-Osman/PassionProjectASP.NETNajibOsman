@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Game</h2>
+<form action="/Game/Create" method="POST">
+    <div>
+        <label>Name:</label> <input type="text" name="GameName" />
+    </div>
+    <div>
+        <label>Game Description:</label> <input type="text" name="GameDescription" />
+    </div>
+    <div>
+        <input type="submit" value="Create Game" />
+
+    </div>
+</form>
+

@@ -1,0 +1,50 @@
+﻿@model PassionProjectASP.NETNajibOsman.Models.UpdatePlayer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Player</h2>
+<nav>
+    <ul>
+        <li><a href="/Player/List">Go back to list</a></li>
+
+        <li><a style="color:#ab2020;" href="/Player/DeleteConfirm/@Model.SelectedPlayer.PlayerID">Delete</a></li>
+    </ul>
+</nav>
+<form action="/Player/Update/@Model.SelectedPlayer.PlayerID" method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div style="display:none;">
+                @* Pass through the Player ID *@
+                <input type="text" name="PlayerID" value="@Model.SelectedPlayer.PlayerID" />
+            </div>
+            <div>
+                <label>Name:</label> <input type="text" name="PlayerBio" value="@Model.SelectedPlayer.PlayerName" />
+            </div>
+            <div>
+                <label>Bio:</label> <input type="text" name="playerBio" value="@Model.SelectedPlayer.PlayerBio" />
+            </div>
+            <div>
+                <label>Community ID:</label>
+
+                <select name="CommunityID">
+                    @foreach (var community in Model.CommunityOptions)
+                    {
+                        var selected = "";
+                        if (community.CommunityID == Model.SelectedPlayer.CommunityID)
+                        {
+                            selected = "selected";
+                        }
+                        <option value="@community.CommunityID" @selected>@community.CommunityName</option>
+
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Update Player" />
+
+    </div>
+

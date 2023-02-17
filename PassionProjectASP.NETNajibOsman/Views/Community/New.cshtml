@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Community</h2>
+<form action="/Community/Create" method="POST">
+    <div>
+        <label>Name:</label> <input type="text" name="CommunityName" />
+    </div>
+    <div>
+        <label>Bio:</label>  <input type="text" name="CommunityBio" />
+    </div>
+    <div>
+        <input type="submit" value="Create Community" />
+
+    </div>
+</form>
+

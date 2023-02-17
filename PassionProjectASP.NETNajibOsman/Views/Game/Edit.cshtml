@@ -1,0 +1,25 @@
+﻿@model PassionProjectASP.NETNajibOsman.Models.GameDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Game</h2>
+<form action="/Keeper/Update/@Model.GameID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Game ID *@
+        <input type="text" name="GameID" value="@Model.GameID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="GameName" value="@Model.GameName" />
+    </div>
+    <div>
+        <label>Game Description:</label> <input type="text" name="GameDescription" value="@Model.GameDescription" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update Game" />
+
+    </div>
+</form>
+
